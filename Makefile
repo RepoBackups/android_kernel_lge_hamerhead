@@ -1575,3 +1575,13 @@ FORCE:
 # Declare the contents of the .PHONY variable as phony.  We keep that
 # information in a variable so we can use it in if_changed and friends.
 .PHONY: $(PHONY)
+
+CT_ARCH_ARCH=""
+CT_ARCH_CPU="cortex-a15"
+CT_ARCH_TUNE="cortex-a15"
+CT_ARCH_FPU="neon-vfpv4"
+CT_ARCH_FLOAT_HW=y
+CT_ARCH_FLOAT="hard"
+CT_ARCH_SUPPORT_SOFTFP=y
+CT_ARCH_ARM_MODE="arm"
+CT_ARCH_ARM_MODE_ARM=y
