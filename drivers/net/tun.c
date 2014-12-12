@@ -1250,7 +1250,7 @@ static long __tun_chr_ioctl(struct file *file, unsigned int cmd,
 	void __user* argp = (void __user*)arg;
 	struct sock_fprog fprog;
 	struct ifreq ifr;
-	int sndbuf;
+//	int sndbuf;
 //	int vnet_hdr_sz;
 //	int ret;
 
