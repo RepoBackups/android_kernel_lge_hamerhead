@@ -34,7 +34,7 @@
 
 struct usb_disable_xhci_ports {
 	
-}
+};
 
 /* Some 0.95 hardware can't handle the chain bit on a Link TRB being cleared */
 static int link_quirk;
