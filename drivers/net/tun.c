@@ -1248,7 +1248,7 @@ static long __tun_chr_ioctl(struct file *file, unsigned int cmd,
 	struct tun_file *tfile = file->private_data;
 	struct tun_struct *tun;
 	void __user* argp = (void __user*)arg;
-	struct sock_fprog fprog;
+//	struct sock_fprog fprog;
 	struct ifreq ifr;
 //	int sndbuf;
 //	int vnet_hdr_sz;
