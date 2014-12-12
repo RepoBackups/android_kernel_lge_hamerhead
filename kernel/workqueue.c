@@ -1209,8 +1209,13 @@ static void worker_enter_idle(struct worker *worker)
 	 * warning may trigger spuriously.  Check iff trustee is idle.
 	 */
 	WARN_ON_ONCE(gcwq->trustee_state == TRUSTEE_DONE &&
+<<<<<<< HEAD
 		     pool->nr_workers == pool->nr_idle &&
 		     atomic_read(get_pool_nr_running(pool)));
+=======
+		     gcwq->nr_workers == gcwq->nr_idle &&
+		     atomic_read(get_gcwq_nr_running(gcwq->cpu)));
+>>>>>>> v3.4.1
 }
 
 /**
