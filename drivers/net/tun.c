@@ -1245,7 +1245,7 @@ static int set_offload(struct tun_struct *tun, unsigned long arg)
 static long __tun_chr_ioctl(struct file *file, unsigned int cmd,
 			    unsigned long arg, int ifreq_len)
 {
-	struct tun_file *tfile = file->private_data;
+//	struct tun_file *tfile = file->private_data;
 //	struct tun_struct *tun;
 	void __user* argp = (void __user*)arg;
 //	struct sock_fprog fprog;
