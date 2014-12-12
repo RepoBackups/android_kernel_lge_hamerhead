@@ -125,7 +125,6 @@ void panic(const char *fmt, ...)
 	 */
 	crash_kexec(NULL);
 
-<<<<<<< HEAD
 	kmsg_dump(KMSG_DUMP_PANIC);
 
 	/* print last_kmsg even after console suspend */
@@ -135,8 +134,6 @@ void panic(const char *fmt, ...)
 	if (is_console_locked())
 		console_unlock();
 
-=======
->>>>>>> v3.4.4
 	/*
 	 * Note smp_send_stop is the usual smp shutdown function, which
 	 * unfortunately means it may not be hardened to work in a panic
