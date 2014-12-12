@@ -1252,7 +1252,7 @@ static long __tun_chr_ioctl(struct file *file, unsigned int cmd,
 	struct ifreq ifr;
 	int sndbuf;
 	int vnet_hdr_sz;
-	int ret;
+//	int ret;
 
 #ifdef CONFIG_ANDROID_PARANOID_NETWORK
 	if (cmd != TUNGETIFF && !capable(CAP_NET_ADMIN)) {
