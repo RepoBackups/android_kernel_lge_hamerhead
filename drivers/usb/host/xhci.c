@@ -32,10 +32,6 @@
 #define DRIVER_AUTHOR "Sarah Sharp"
 #define DRIVER_DESC "'eXtensible' Host Controller (xHC) Driver"
 
-struct usb_disable_xhci_ports {
-	
-};
-
 /* Some 0.95 hardware can't handle the chain bit on a Link TRB being cleared */
 static int link_quirk;
 module_param(link_quirk, int, S_IRUGO | S_IWUSR);
@@ -170,7 +166,7 @@ int xhci_reset(struct xhci_hcd *xhci)
 	xhci_writel(xhci, command, &xhci->op_regs->command);
 
 	ret = handshake(xhci, &xhci->op_regs->command,
-			CMD_RESET, 0, 10 * 1000 * 1000);
+			CMD_RESET, 0, 250 * 1000);
 	if (ret)
 		return ret;
 
@@ -179,8 +175,7 @@ int xhci_reset(struct xhci_hcd *xhci)
 	 * xHCI cannot write to any doorbells or operational registers other
 	 * than status until the "Controller Not Ready" flag is cleared.
 	 */
-	ret = handshake(xhci, &xhci->op_regs->status,
-			STS_CNR, 0, 10 * 1000 * 1000);
+	ret = handshake(xhci, &xhci->op_regs->status, STS_CNR, 0, 250 * 1000);
 
 	for (i = 0; i < 2; ++i) {
 		xhci->bus_state[i].port_c_suspend = 0;
@@ -655,9 +650,6 @@ void xhci_stop(struct usb_hcd *hcd)
 void xhci_shutdown(struct usb_hcd *hcd)
 {
 	struct xhci_hcd *xhci = hcd_to_xhci(hcd);
-
-	if (xhci->quirks && XHCI_SPURIOUS_REBOOT)
-		usb_disable_xhci_ports(to_pci_dev(hcd->self.controller));
 
 	spin_lock_irq(&xhci->lock);
 	xhci_halt(xhci);
