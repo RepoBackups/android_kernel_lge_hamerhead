@@ -1251,7 +1251,7 @@ static long __tun_chr_ioctl(struct file *file, unsigned int cmd,
 	struct sock_fprog fprog;
 	struct ifreq ifr;
 	int sndbuf;
-	int vnet_hdr_sz;
+//	int vnet_hdr_sz;
 //	int ret;
 
 #ifdef CONFIG_ANDROID_PARANOID_NETWORK
