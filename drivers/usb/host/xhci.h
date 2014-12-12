@@ -1484,7 +1484,6 @@ struct xhci_hcd {
 #define XHCI_RESET_ON_RESUME	(1 << 7)
 #define	XHCI_SW_BW_CHECKING	(1 << 8)
 #define XHCI_AMD_0x96_HOST	(1 << 9)
-<<<<<<< HEAD
 /*
  * In Synopsis DWC3 controller, PORTSC register access involves multiple clock
  * domains. When the software does a PORTSC write, handshakes are needed
@@ -1508,9 +1507,7 @@ struct xhci_hcd {
  * The workaround is to give worst case pipe delay ~350us after resetting HC
  */
 #define XHCI_RESET_DELAY	(1 << 11)
-=======
 #define XHCI_TRUST_TX_LENGTH	(1 << 10)
->>>>>>> v3.4.1
 	unsigned int		num_active_eps;
 	unsigned int		limit_active_eps;
 	/* There are two roothubs to keep track of bus suspend info for */
