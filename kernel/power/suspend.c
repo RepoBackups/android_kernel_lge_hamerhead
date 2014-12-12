@@ -24,11 +24,8 @@
 #include <linux/export.h>
 #include <linux/suspend.h>
 #include <linux/syscore_ops.h>
-<<<<<<< HEAD
 #include <linux/rtc.h>
-=======
 #include <linux/ftrace.h>
->>>>>>> v3.4.8
 #include <trace/events/power.h>
 
 #include "power.h"
